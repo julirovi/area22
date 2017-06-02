@@ -1,0 +1,48 @@
+/**
+ * Imports :
+ */
+// @import 'compass/reset';
+// @import 'compass/css3';
+
+/**
+ * Import grid settings :
+ * This to be able to use gridle mixins, etc...
+ */
+@import 'colors/colors';
+@import 'mixins/own_mixins';
+@import 'fonts/fonts';
+
+
+
+
+@import 'grid-settings';
+
+/**
+ * Resets
+ */
+@import 'tools/reset';
+
+/**
+ * Variables
+ */
+@import 'variables';
+
+
+@import 'pages/home/header';
+@import 'pages/home/header_menu';
+@import 'pages/home/app';
+@import 'pages/home/app_paint';
+@import 'pages/home/app_paint_create';
+
+
+@import 'components/footer_superior';
+@import 'components/footer_inferior';
+@import 'components/buttons';
+@import 'components/header_aplication';
+@import 'components/form_styles';
+@import 'media_queries/media_queries';
+
+
+body {
+	overflow-x: hidden;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <title>App Paint Cuerpo</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+    <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <script type="text/javascript" src="../js/paintjs.js"></script>
+  </head>
+  <body>
+
+    <div class="app-paint">
+      <div class="question">
+        <h1 class="question">¿Dónde se encuentra el muculo  bíceps? Píntalo.</h1>
+      </div>
+      <div id="point-respuesta1" onclick="validatepaint()">
+
+      </div>
+      <canvas id="colors_sketch" width="500" height="500" style="background: url(https://www.educima.com/dibujo-para-colorear-musculos-del-brazo-p12897.jpg) no-repeat center center;"></canvas>
+      <div class="tools">
+        <a href="#colors_sketch" data-color="#ff0" >
+          <div class="color" style="background: #ff0;">
+          </div>
+        </a>
+        <a href="#colors_sketch" data-color="#0f0" >
+          <div class="color" style="background: #0f0;">
+          </div>
+        </a>
+        <a href="#colors_sketch" data-color="red" >
+          <div class="color" style="background: red;">
+          </div>
+        </a>
+        <a href="#colors_sketch" data-size="10" style="background: url(../img/paint/small.png) no-repeat center center;">
+          <div class="color" >
+          </div>
+        </a>
+        <a href="#colors_sketch" data-size="20" style="background: url(../img/paint/medium.png) no-repeat center center;">
+          <div class="color" >
+          </div>
+        </a>
+        <a href="#colors_sketch" data-size="30" style="background: url(../img/paint/large.png) no-repeat center center;">
+          <div class="color" >
+          </div>
+        </a>
+        <a onClick="history.go(0)" VALUE="Refresh" data-size="30" style="background: url(../img/paint/erase.png) no-repeat center center; background-size: 45px;">
+          <div class="color" >
+          </div>
+        </a>
+     </div>
+     <div class="box-verificar">
+       <div id="verificarbtn" class="verificar" onclick="validatepaintrespuesta()">
+         <h1 class="question">Verificar</h1>
+       </div>
+     </div>
+     <div id="correctPaintBtn" class="box-verificar">
+       <div class="verificar-correct">
+         <h1 class="question">Correcto!</h1>
+       </div>
+     </div>
+     <div id="IncorrectPaintBtn" class="box-verificar">
+       <div class="verificar-incorrect">
+         <h1 class="question">Incorrecto!</h1>
+       </div>
+     </div>
+    </div>
+
+
+
+
+  <script type="text/javascript">
+  
+  </script>
+  </body>
+</html>
