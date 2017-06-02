@@ -1,0 +1,14 @@
+$font-source-sans-pro: 'Source Sans Pro', sans-serif;
+
+/*
+h1.XXXXXX{
+  @include font-style(500, 2em, $color-secundary, none);
+  padding-top: 10px;
+}*/
+h1.question{
+  @include font-style(500, 1.3em, $primary-color, none);
+  padding-top: 10px;
+}
+p.description{
+  @include font-style(500, 1em, $primary-color, none);
+}

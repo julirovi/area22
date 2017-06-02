@@ -1,0 +1,410 @@
+/**
+ * Imports :
+ */
+/**
+ * Import grid settings :
+ * This to be able to use gridle mixins, etc...
+ */
+/*$color-primary: ;
+$color-secundary: ;
+$color-tertiary: ;*/
+.img-responsive {
+  max-width: 100%; }
+
+/*
+h1.XXXXXX{
+  @include font-style(500, 2em, $color-secundary, none);
+  padding-top: 10px;
+}*/
+h1.question {
+  font-weight: 500;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.3em;
+  color: black;
+  background-color: none;
+  padding-top: 10px; }
+
+p.description {
+  font-weight: 500;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1em;
+  color: black;
+  background-color: none; }
+
+/**
+ * Resets
+ */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/**
+ * Variables
+ */
+/**
+ * Variables
+ */
+/*
+$primary-color : ;
+$complementary : ;
+$title : ;
+$text : ;
+*/
+.box-test {
+  display: flex; }
+  .box-test .app-exam {
+    width: 600px;
+    height: 700px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: white; }
+    .box-test .app-exam ul {
+      display: block;
+      width: 100%; }
+      .box-test .app-exam ul li {
+        border: 1px solid #d2d2d2; }
+      .box-test .app-exam ul li.control-part {
+        background-color: #f3f3f3;
+        height: 100%;
+        border-bottom: 0px; }
+        .box-test .app-exam ul li.control-part .control {
+          height: 100%;
+          padding: 10px 25px 10px 25px;
+          display: flex; }
+          .box-test .app-exam ul li.control-part .control div {
+            width: 50%; }
+          .box-test .app-exam ul li.control-part .control .intentos {
+            text-align: right; }
+            .box-test .app-exam ul li.control-part .control .intentos span {
+              font-size: 2em; }
+      .box-test .app-exam ul li.interactive-part {
+        height: 600px;
+        text-align: center; }
+        .box-test .app-exam ul li.interactive-part img {
+          width: 100%; }
+        .box-test .app-exam ul li.interactive-part .point .box-name-muscle {
+          display: none;
+          width: 100%;
+          height: auto;
+          background-color: #f3f3f3;
+          border: 1px solid #d2d2d2;
+          border-radius: 5px;
+          padding: 5px; }
+        .box-test .app-exam ul li.interactive-part .point:hover {
+          background-color: #0071C9;
+          border: 3px solid #dadada; }
+        .box-test .app-exam ul li.interactive-part #point1 {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 25px;
+          margin-left: 140px; }
+        .box-test .app-exam ul li.interactive-part #point2 {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 160px;
+          margin-left: 77px; }
+        .box-test .app-exam ul li.interactive-part #point3 {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 272px;
+          margin-left: 498px; }
+        .box-test .app-exam ul li.interactive-part #point4 {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 345px;
+          margin-left: 171px; }
+        .box-test .app-exam ul li.interactive-part #point5 {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 126px;
+          margin-left: 381px; }
+        .box-test .app-exam ul li.interactive-part #point6 {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 460px;
+          margin-left: 387px; }
+        .box-test .app-exam ul li.interactive-part #point1_d {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 25px;
+          margin-left: 140px; }
+        .box-test .app-exam ul li.interactive-part #point2_d {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 160px;
+          margin-left: 77px; }
+        .box-test .app-exam ul li.interactive-part #point3_d {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 272px;
+          margin-left: 498px; }
+        .box-test .app-exam ul li.interactive-part #point4_d {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 345px;
+          margin-left: 171px; }
+        .box-test .app-exam ul li.interactive-part #point5_d {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 126px;
+          margin-left: 381px; }
+        .box-test .app-exam ul li.interactive-part #point6_d {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #62bcff;
+          border: 3px solid #dadada;
+          position: absolute;
+          cursor: pointer;
+          margin-top: 460px;
+          margin-left: 387px; }
+
+.correct-alert {
+  background-color: #ffab28; }
+
+.correct-answer {
+  background-color: #96ff96; }
+
+.finalView {
+  opacity: 0.3; }
+
+.correct-worng {
+  background-color: #ff5228; }
+
+.point-disabled {
+  cursor: not-allowed; }
+
+canvas {
+  border: 1px solid #bbbbbb;
+  margin: 15px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  /*cursor:url(https://image.flaticon.com/icons/png/128/263/263087.png), auto;*/
+  cursor: url(../img/paint/pincel.png), pointer; }
+
+#correctPaintBtn {
+  display: none; }
+
+#IncorrectPaintBtn {
+  display: none; }
+
+#point-respuesta1 {
+  width: 40px;
+  height: 20px;
+  /*background-color: #62bcff;*/
+  position: absolute;
+  margin-top: 357px;
+  margin-left: 266px; }
+
+.app-paint {
+  width: 535px;
+  height: 730px;
+  border: 1px solid #bbbbbb;
+  margin: 0 auto;
+  margin-top: 20px; }
+  .app-paint .tools {
+    margin: 15px;
+    margin-top: 0px;
+    display: flex; }
+    .app-paint .tools .color {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #bbbbbb;
+      margin: 5px; }
+  .app-paint .question {
+    margin: 0px 10px 0px 10px; }
+  .app-paint .box-verificar {
+    float: right;
+    margin: 15px;
+    margin-top: 0px; }
+    .app-paint .box-verificar .verificar {
+      cursor: pointer;
+      background-color: #dcdcdc;
+      width: 100px;
+      height: 50px;
+      border: 1px solid #bbbbbb;
+      margin: 5px;
+      text-align: center; }
+    .app-paint .box-verificar .verificar-correct {
+      background-color: #9bff9f;
+      width: 100px;
+      height: 50px;
+      border: 1px solid #bbbbbb;
+      margin: 5px;
+      text-align: center; }
+    .app-paint .box-verificar .verificar-incorrect {
+      background-color: #ff5959;
+      width: 110px;
+      height: 50px;
+      border: 1px solid #bbbbbb;
+      margin: 5px;
+      text-align: center; }
+
+.box-paint-create {
+  margin-top: 30px;
+  margin-left: 20px;
+  width: 1300px;
+  height: 765px;
+  /*border: 1px solid #bbbbbb;*/
+  display: flex; }
+  .box-paint-create div.create {
+    width: 50%; }
+  .box-paint-create div.view {
+    width: 50%; }
+  .box-paint-create .create .form {
+    width: 90%;
+    margin: 10px; }
+    .box-paint-create .create .form .form-group input {
+      width: 500px; }
+    .box-paint-create .create .form button {
+      float: right; }
+    .box-paint-create .create .form .ui-resizable-e {
+      width: 7px; }
+    .box-paint-create .create .form .ui-icon {
+      width: 16px; }
+  .box-paint-create .create button {
+    margin-right: 83px; }
+
+#resizeDiv {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  background-color: red;
+  position: absolute;
+  cursor: move; }
+
+#fileDisplayArea {
+  margin: 10px 0px 10px 0px;
+  width: 502px;
+  height: 502px;
+  border: 1px solid #bbbbbb;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  background: url(../img/image.png); }
+
+#paintCreated {
+  margin-left: 42px;
+  display: none; }
+
+#pointPrespuesta1 {
+  width: 50px;
+  height: 50px;
+  /*background-color: #62bcff;*/
+  cursor: url(../img/paint/pincel.png), pointer;
+  position: absolute; }
+
+#puntoderespuesta {
+  display: none; }
+
+/*BTN Example*/
+/*.btn-entrar-login{
+  @include font-style(700, 1em, $color-secundary, $color-blue-impact);
+  @include size(150px, 35px);
+  @include clear-button() ;
+  border-radius: 20px;
+}*/
+button {
+  cursor: pointer; }
+
+body {
+  overflow-x: hidden; }

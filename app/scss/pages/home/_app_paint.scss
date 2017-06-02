@@ -1,0 +1,71 @@
+
+
+canvas{
+  border: 1px solid #bbbbbb;
+  margin: 15px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  /*cursor:url(https://image.flaticon.com/icons/png/128/263/263087.png), auto;*/
+
+  cursor: url(../img/paint/pincel.png), pointer;
+
+}
+#correctPaintBtn{
+  display: none;
+}
+#IncorrectPaintBtn{
+  display: none;
+}
+
+#point-respuesta1{
+    @include paint-point(357px,266px);
+}
+.app-paint{
+  @include size(535px, 730px);
+  border: 1px solid #bbbbbb;
+  margin: 0 auto;
+  margin-top: 20px;
+  .tools{
+    margin: 15px;
+    margin-top: 0px;
+    display: flex;
+    .color{
+      @include size(50px, 50px);
+      border: 1px solid #bbbbbb;
+      margin: 5px;
+    }
+  }
+  .question{
+    margin: 0px 10px 0px 10px;
+  }
+  .box-verificar{
+    float: right;
+    margin: 15px;
+    margin-top: 0px;
+    .verificar{
+      cursor: pointer;
+      background-color: #dcdcdc;
+      @include size(100px, 50px);
+      border: 1px solid #bbbbbb;
+      margin: 5px;
+      text-align: center;
+    }
+    .verificar-correct{
+      background-color: #9bff9f;
+      @include size(100px, 50px);
+      border: 1px solid #bbbbbb;
+      margin: 5px;
+      text-align: center;
+    }
+    .verificar-incorrect{
+      background-color: #ff5959;
+      @include size(110px, 50px);
+      border: 1px solid #bbbbbb;
+      margin: 5px;
+      text-align: center;
+    }
+
+  }
+
+}

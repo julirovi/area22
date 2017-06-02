@@ -1,0 +1,75 @@
+.box-paint-create{
+
+  margin-top: 30px;
+  margin-left: 20px;
+  @include size(1300px,765px);
+  /*border: 1px solid #bbbbbb;*/
+  display: flex;
+  div.create{
+    width: 50%;
+  }
+  div.view{
+    width: 50%;
+  }
+  .create{
+    .form{
+      width: 90%;
+      margin: 10px;
+      .form-group{
+        input{
+          width: 500px;
+        }
+      }
+      button{
+        float: right;
+      }
+      .ui-resizable-e{
+        width: 7px;
+      }
+      .ui-icon{
+        width: 16px;
+      }
+    }
+    button{
+      margin-right: 83px;
+    }
+  }
+  .view{}
+
+
+}
+
+#resizeDiv {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  background-color: red;
+  position: absolute;
+  cursor: move;
+}
+
+#fileDisplayArea{
+  margin: 10px 0px 10px 0px;
+  @include size(502px,502px);
+  border: 1px solid #bbbbbb;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  background: url(../img/image.png);
+}
+#paintCreated{
+  margin-left: 42px;
+  display: none;
+}
+#pointPrespuesta1{
+  @include size(50px, 50px);
+  /*background-color: #62bcff;*/
+  cursor: url(../img/paint/pincel.png), pointer;
+  position: absolute;
+}
+#puntoderespuesta{
+  display: none;
+}

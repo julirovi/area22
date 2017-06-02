@@ -1,0 +1,13 @@
+/*BTN Example*/
+
+/*.btn-entrar-login{
+  @include font-style(700, 1em, $color-secundary, $color-blue-impact);
+  @include size(150px, 35px);
+  @include clear-button() ;
+  border-radius: 20px;
+}*/
+
+
+button{
+  cursor: pointer;
+}

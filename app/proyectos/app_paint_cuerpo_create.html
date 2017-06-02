@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <link async rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+  <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+  <script type="text/javascript" src="../js/paintjs.js"></script>
+  <title>App Create Paint Cuerpo</title>
+</head>
+
+<body>
+  <div class="box-paint-create">
+    <div id="CreatePart" class="create">
+      <div class="form">
+
+          <h2>Crea tu propio Exam Cuerpo Paint</h2>
+            <div class="form-group">
+              <label for="email">Pregunta:</label>
+              <input type="text" class="form-control" id="question" placeholder="Pregunta" name="question" required="">
+            </div>
+            <div id="page-wrapper">
+								<div>
+									<input type="file" id="fileInput">
+								</div>
+                <div id="puntoderespuesta" class="form-group">
+                  <label for="email">Punto de respuesta:</label>
+                  <div id="resizeDiv"><p id="hi"></p></div>
+                </div>
+								<div id="fileDisplayArea"></div>
+
+							</div>
+
+
+            <button  class="btn btn-primary" onclick="crear()">Crear</button>
+
+              <!--<div class="draggable1"></div>
+              <div class="draggable2"></div>
+              <div class="draggable3"></div>-->
+
+
+
+
+      </div>
+    </div>
+    <div class="view">
+      <div id="paintCreated" class="app-paint">
+        <div class="question">
+          <h1 id="QuestionExamPre" class="question"></h1><!--Recuperar Pregunta-->
+        </div>
+        <div id="pointPrespuesta1" onclick="validatepaint()"><!--Recuperar Punto Examen-->
+
+        </div>
+        <canvas id="colors_sketch" width="500" height="500"></canvas><!--Recuperar Imagen-->
+        <div class="tools">
+          <a href="#colors_sketch" data-color="#ff0" >
+            <div class="color" style="background: #ff0;">
+            </div>
+          </a>
+          <a href="#colors_sketch" data-color="#0f0" >
+            <div class="color" style="background: #0f0;">
+            </div>
+          </a>
+          <a href="#colors_sketch" data-color="red" >
+            <div class="color" style="background: red;">
+            </div>
+          </a>
+          <a href="#colors_sketch" data-size="5" style="background: url(../img/paint/small.png) no-repeat center center;">
+            <div class="color" >
+            </div>
+          </a>
+          <a href="#colors_sketch" data-size="20" style="background: url(../img/paint/medium.png) no-repeat center center;">
+            <div class="color" >
+            </div>
+          </a>
+          <a href="#colors_sketch" data-size="30" style="background: url(../img/paint/large.png) no-repeat center center;">
+            <div class="color" >
+            </div>
+          </a>
+          <a onClick="history.go(0)" VALUE="Refresh" data-size="30" style="background: url(../img/paint/erase.png) no-repeat center center; background-size: 45px;">
+            <div class="color" >
+            </div>
+          </a>
+       </div>
+       <div class="box-verificar">
+         <div id="verificarbtn" class="verificar" onclick="validatepaintrespuesta()">
+           <h1 class="question">Verificar</h1>
+         </div>
+       </div>
+       <div id="correctPaintBtn" class="box-verificar">
+         <div class="verificar-correct">
+           <h1 class="question">Correcto!</h1>
+         </div>
+       </div>
+       <div id="IncorrectPaintBtn" class="box-verificar">
+         <div class="verificar-incorrect">
+           <h1 class="question">Incorrecto!</h1>
+         </div>
+       </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+
+
+  $('#resizeDiv')
+  	.draggable(
+      {
+        start: function() {
+            coordinates('#resizeDiv');
+        },
+        stop: function() {
+            coordinates('#resizeDiv');
+        }
+      }
+    )
+  	.resizable(
+      {
+        start: function() {
+            midas('#resizeDiv');
+        },
+        stop: function() {
+            midas('#resizeDiv');
+        }
+      }
+    );
+
+
+
+    var coordinates = function(element) {
+        element = $(element);
+        var top = element.position().top;
+        var left = element.position().left;
+        $('#results').text('X: ' + left + ' ' + 'Y: ' + top);
+        document.getElementById("pointPrespuesta1").style.left = left+48+"px";
+        document.getElementById("pointPrespuesta1").style.top = top-131+"px";
+
+    }
+    var midas = function(element) {
+        element = $(element);
+        var width = element.width();
+        var height = element.height();
+        document.getElementById("pointPrespuesta1").style.width = width+10+"px";
+        document.getElementById("pointPrespuesta1").style.height = height+10+"px";
+
+    }
+
+
+
+
+
+  /*Input file*/
+window.onload = function() {
+
+var fileInput = document.getElementById('fileInput');
+var fileDisplayArea = document.getElementById('fileDisplayArea');
+
+
+fileInput.addEventListener('change', function(e) {
+var file = fileInput.files[0];
+var imageType = /image.*/;
+
+if (file.type.match(imageType)) {
+  var reader = new FileReader();
+
+  reader.onload = function(e) {
+    fileDisplayArea.innerHTML = "";
+
+    var img = new Image();
+    img.src = reader.result;
+    var foto = "url('"+reader.result+"') no-repeat center"
+    document.getElementById("fileDisplayArea").style.background=foto;
+    document.getElementById("colors_sketch").style.background=foto;
+    document.getElementById("puntoderespuesta").style.display="block";
+
+
+    /*fileDisplayArea.appendChild(img);*/
+  }
+
+  reader.readAsDataURL(file);
+} else {
+  fileDisplayArea.innerHTML = "File not supported!"
+}
+});
+
+}
+function crear(){
+document.getElementById("paintCreated").style.display="block";
+document.getElementById("CreatePart").style.display="none";
+  var theDiv = document.getElementById("QuestionExamPre");
+var content = document.createTextNode($('input:text[name=question]').val());
+theDiv.appendChild(content);
+
+
+
+}
+
+
+  </script>
+</body>
+</html>

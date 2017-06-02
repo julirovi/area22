@@ -1,0 +1,110 @@
+.box-test{
+  display: flex;
+  .app-exam{
+    @include size(600px, 700px);
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: white;
+    ul{
+      display: block;
+      width: 100%;
+      li{
+        border: 1px solid #d2d2d2;
+      }
+      li.control-part{
+        background-color: #f3f3f3;
+        height: 100%;
+        border-bottom: 0px;
+        .control{
+          height: 100%;
+          padding: 10px 25px 10px 25px;
+          display: flex;
+          div{
+            width: 50%;
+          }
+          .intentos{
+            text-align: right;
+            span{
+              font-size: 2em;
+            }
+          }
+        }
+      }
+      li.interactive-part{
+        height: 600px;
+        text-align: center;
+        img{
+          width: 100%;
+        }
+        .point{
+          .box-name-muscle{
+            display: none;
+            @include size(100%, auto);
+            background-color: #f3f3f3;
+            border: 1px solid #d2d2d2;
+            border-radius: 5px;
+            padding: 5px;
+          }
+        }
+        .point:hover{
+          background-color: #0071C9;
+          border: 3px solid #dadada;
+        }
+        #point1{
+            @include point(25px,140px);
+        }
+        #point2{
+            @include point(160px,77px);
+        }
+        #point3{
+            @include point(272px,498px);
+        }
+        #point4{
+            @include point(345px,171px);
+        }
+        #point5{
+            @include point(126px,381px);
+        }
+        #point6{
+            @include point(460px,387px);
+        }
+
+
+        #point1_d{
+            @include point(25px,140px);
+        }
+        #point2_d{
+            @include point(160px,77px);
+        }
+        #point3_d{
+            @include point(272px,498px);
+        }
+        #point4_d{
+            @include point(345px,171px);
+        }
+        #point5_d{
+            @include point(126px,381px);
+        }
+        #point6_d{
+            @include point(460px,387px);
+        }
+      }
+    }
+  }
+}
+
+.correct-alert{
+  background-color: #ffab28;
+}
+.correct-answer{
+  background-color: #96ff96;
+}
+.finalView{
+  opacity: 0.3;
+}
+.correct-worng{
+  background-color: #ff5228;
+}
+.point-disabled{
+  cursor: not-allowed;
+}

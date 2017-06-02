@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link async rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href="css/grid.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/css/main.css" media="screen" title="no title">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/andy.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+	<title>Parte Cuerpo APP - Home</title>
+	<script src="js/gridle.js"></script>
+	<script src="js/gridle-eq.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/demo.js"></script>
+</head>
+<body>
+	<div class="box-test">
+		<div id="respuestaGemelo" class="app-exam">
+			<ul>
+				<li  class="control-part">
+					<div id="capa" class="control">
+						<div>
+							<h1 class="question">¿Dónde se encuentra el muculo  gmelo?</h1>
+						</div>
+						<div class="intentos">
+							<h1 id="intentos" class="question"><span id="intentosCount">0</span>/3 Intentos</h1>
+						</div>
+					</div>
+				</li>
+				<li id="interactivePart" class="interactive-part">
+					<div id="point1"  class="point" onclick="validate(1)"></div>
+					<div id="point2"  class="point" onclick="validate(2)"></div>
+					<div id="point3" class="point" onclick="validate(3)"></div>
+					<div id="point4" class="point" onclick="validate(4)"></div>
+					<div id="point5" class="point" onclick="validate(5)"></div>
+					<div id="point6" class="point" onclick="validate(6)"></div>
+					<img src="img/plantilla.png" alt="" />
+				</li>
+			</ul>
+		</div>
+		<div id="respuestaGemelo" class="app-exam">
+			<ul>
+				<li  class="control-part">
+					<div id="capa" class="control">
+						<div>
+							<h1 class="question">Mapa Interactivo Músculos del cuerpo humano.</h1>
+						</div>
+						<div class="intentos">
+							<h1 id="intentos" class="question">Haz click para averiguar</h1>
+						</div>
+					</div>
+				</li>
+				<li id="interactivePart" class="interactive-part">
+					<div id="point1_d" class="point" onclick="view(1)">
+						<div id="description1" class="box-name-muscle">
+							<p class="description ">frontal</p>
+						</div>
+					</div>
+					<div id="point2_d" class="point" onclick="view(2)">
+						<div id="description2" class="box-name-muscle">
+							<p class="description ">Bícep braquial</p>
+						</div>
+					</div>
+					<div id="point3_d" class="point" onclick="view(3)">
+						<div id="description3" class="box-name-muscle">
+							<p class="description ">Radial Externo</p>
+						</div>
+					</div>
+					<div id="point4_d" class="point" onclick="view(4)">
+						<div id="description4" class="box-name-muscle">
+							<p class="description ">Recto anterior</p>
+						</div>
+					</div>
+					<div id="point5_d" class="point" onclick="view(5)">
+						<div id="description5" class="box-name-muscle">
+							<p class="description ">Deltoides</p>
+						</div>
+					</div>
+					<div id="point6_d" class="point" onclick="view(6)">
+						<div id="description6" class="box-name-muscle">
+							<p class="description ">Gemelos</p>
+						</div>
+					</div>
+					<img src="img/plantilla.png" alt="" />
+				</li>
+			</ul>
+		</div>
+	</div>
+
+<script type="text/javascript">
+  count = 0;
+	function validate(answer) {
+		var intentos = document.getElementById("intentos");
+		var intentosCounttext = document.getElementById("intentosCount");
+		aswerserver = 6;
+		count++;
+		if(count>2 && answer != aswerserver){
+			$("#capa").addClass("correct-worng");
+			intentos.innerHTML = "No tienes más intentos 3/3!";
+			$("#interactivePart").addClass("finalView")
+		}
+		else{
+			if(answer == aswerserver){
+				$("#capa").addClass("correct-answer");
+				$("#interactivePart").addClass("finalView")
+				intentos.innerHTML = "Correcto! "+count+"/3";
+				count = 0;
+			}
+			if(answer != aswerserver){
+				$("#capa").addClass("correct-alert");
+				intentosCounttext.innerHTML = count;
+			}
+		}
+	}
+	function view(number){
+		document.getElementById("description"+number).style.display="block";
+		document.getElementById("point"+number+"_d").style.width="initial";
+		document.getElementById("point"+number+"_d").style.border="0px";
+	}
+</script>
+</body>
+</html>

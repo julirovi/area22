@@ -1,0 +1,15 @@
+.box-content-quiz {
+  width: 612px;
+  padding: 40px 0px 0px 180px; }
+  .box-content-quiz .box-quiz {
+    padding-top: 50px; }
+    .box-content-quiz .box-quiz ul {
+      margin-top: 20px; }
+    .box-content-quiz .box-quiz li {
+      margin-bottom: 10px; }
+
+.label-text {
+  vertical-align: middle;
+  cursor: pointer;
+  padding-left: 10px;
+  margin-left: -5px; }
